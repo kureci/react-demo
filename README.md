@@ -7,14 +7,16 @@ Within this project you will find a node js backend server for a notes app. Your
 
 Get the code
 
-    git clone 'whereever the repository will be'
+    git clone https://github.com/AgeasWebDevTeam/ageasTechTestStarter.git
 
 Install the node dependencies
     cd ageasTechTestStarter/
-    npm install / yarn install, 
+    npm install
 
 Start the server
-    npm start / yarn start
+    npm start
+
+Feel free to use yarn instead of npm if you prefer.
 
 ## Your app
 
