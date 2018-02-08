@@ -3,6 +3,23 @@
 ## Instructions
 Within this project you will find a node js backend server for a notes app. Your task is to create a frontend for this server using React.
 
+Your app must allow the user to:
+  - create plain text notes
+  - view a list of existing notes
+  - edit notes
+  - delete notes
+  
+Any features beyond this are up to you, but the app must convey a modern look & feel, and the design must demonstrate responsive design elements.
+
+### Some Advice
+  - your code should be easy to follow
+  - do not over-engineer your solution
+  - pay attention to code correctness (e.g. consider edge cases, error handling etc)
+  - this is a single user app that runs locally, so there is no need for multi-user featureds, logins, security etc
+  
+### Solution delivery
+Once your solution is ready to send to us, please upload th ********
+  
 ## Getting Started
 
 Get the code
