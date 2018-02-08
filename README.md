@@ -20,7 +20,7 @@ Any features beyond this are up to you, but the app must convey a modern look & 
 ### Solution delivery
 Once your solution is ready to send to us, please change the remote origin of your project and push it to a new public repo from your github or bitbucket account. Please then send us a link to the public repo.
 
-you can change your remote origin by using this comand changeing <YOURUSERNAME> to your github username and <REPOSITORYNAME> to the name of your new public repository.
+you can change your remote origin by using this comand changing `<YOURUSERNAME>` to your github username and `<REPOSITORYNAME>` to the name of your new public repository.
   
 `git remote set-url origin https://github.com/<YOURUSERNAME>/<REPOSITORYNAME>.git`
 
