@@ -1,0 +1,5 @@
+node_modules
+server/database/database.db
+server/database/test_database.db
+yarn.lock
+.idea

@@ -1,0 +1,18 @@
+{
+  "name": "TechTest",
+  "version": "1.0.0",
+  "description": "Ageas frontend Tech test",
+  "main": "server/index.js",
+  "repository": "",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "author": "Ageas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "sequelize": "^4.2.0",
+    "sqlite3": "^3.1.8"
+  }
+}
