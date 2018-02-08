@@ -10,10 +10,12 @@ Get the code
     git clone https://github.com/AgeasWebDevTeam/ageasTechTestStarter.git
 
 Install the node dependencies
+
     cd ageasTechTestStarter/
     npm install
 
 Start the server
+
     npm start
 
 Feel free to use yarn instead of npm if you prefer.
