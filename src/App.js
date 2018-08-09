@@ -1,61 +1,21 @@
 import React, { Component } from 'react';
-import NotesListItem from './components/NotesListItem';
-class Main extends Component {
-    constructor() {
-        super();
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Home from './components/Home';
+import Note from './components/Note';
 
-        this.state = {
-            notes: []
-        }
-    }
-
-    componentDidMount() {
-        this.getNotes();
-    }
-
-    getNotes() {
-        fetch("/api/notes")
-            .then(res => res.json())
-            .then(result => {
-                this.setState({
-                    notes: result
-                });
-            });
-    }
-
-    deleteNote(note) {
-        fetch("/api/notes/" + note.id, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            }
-        })
-        .then(res => {
-            if(res.status == 200) {
-                this.getNotes();
-            }
-        });
-    }
-
-    notesList() {
-        if (!this.state.notes) return null;
-        return this.state.notes.map((note) => {
-            return <NotesListItem 
-                key={note.id}
-                title={note.title} 
-                body={note.body.substr(0, 200)}
-                deleteHandler={() => this.deleteNote(note)}
-            />
-        });
-    }
-
+class App extends Component {
     render() {
         return (
-            <div className="container">
-                {this.notesList()}
-            </div>
+            <Router>
+                <div className="container">
+                    <Route exact path="/" component={Home} />
+                    <Route path="/notes/:id" render={(props) => 
+                        <Note id={props.match.params.id} {...props}/> 
+                    }/>
+                </div>
+            </Router>
         );
     }
 }
 
-export default Main;
+export default App;

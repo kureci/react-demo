@@ -28,6 +28,11 @@
             border-left: 1px solid lightgrey;
             height: 100%;
 
+            a, a:visited, a:hover, a:active {
+                text-decoration: none;
+                color: black;
+            }
+
             span {
                 display: block;
                 padding: 5px 15px;

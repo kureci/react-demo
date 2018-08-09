@@ -14,3 +14,18 @@ body {
     max-width: 1440px;
     padding: 10px;
 }
+
+.row {
+    overflow: auto;
+    width: 100%;
+}
+
+.float-left, .flloat-right {
+    display: inline-block;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}

@@ -1,4 +1,6 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './NotesListItem.scss';
 
 class NotesListItem extends Component {
@@ -30,7 +32,9 @@ class NotesListItem extends Component {
                     {this.props.title}
                     <div className="body">{this.props.body}</div>
                     <div className="operations">
-                        <span className="edit">Edit</span>
+                        <span className="edit">
+                            <Link to={this.props.linkTo} >Edit</Link>
+                        </span>
                         <span className="delete" onClick={() => this.toggleOverlay(true)}>Delete</span>
                     </div>
                 </div>

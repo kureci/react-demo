@@ -1,0 +1,39 @@
+.note-page {
+    a {
+        text-decoration: none;
+        color: black;
+
+        &.back {
+            display: block;
+            margin: 0 0 10px 2px;
+        }
+    }
+}
+
+.note {
+    background: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px lightgrey;
+    padding: 20px;
+}
+
+input[type=text], textarea {
+    padding: 5px;
+    line-height: 24px;
+    min-height: 32px;
+    font-size: 14px;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+input.title {
+    font-size: 16px;
+    border-bottom: 1px solid lightgrey;
+}
