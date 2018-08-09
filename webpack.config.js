@@ -21,6 +21,5 @@ module.exports = {
     path: __dirname + '/public',
     publicPath: '/',
     filename: 'bundle.js'
-  },
-  watch: true
+  }
 };

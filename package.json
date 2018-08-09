@@ -6,7 +6,7 @@
   "repository": "",
   "scripts": {
     "start": "node server/index.js",
-    "dev": "webpack --config ./webpack.config.js --mode development"
+    "build": "webpack --config ./webpack.config.js"
   },
   "author": "Ageas",
   "license": "ISC",
