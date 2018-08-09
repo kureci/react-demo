@@ -1,23 +1,5 @@
 import React, { Component } from 'react';
-import NotesListItem from './NotesListItem';
-
-const data = [
-    {
-        "id":1,
-        "title":"A Title",
-        "body":"A Body",
-        "createdAt":"2018-02-07T08:54:41.311Z",
-        "updatedAt":"2018-02-07T08:54:41.311Z"
-    },
-    {
-        "id":2,
-        "title":"Another Note",
-        "body":"Another Body",
-        "createdAt":"2018-02-07T08:55:27.347Z",
-        "updatedAt":"2018-02-07T08:55:27.347Z"
-    }
-];
-
+import NotesListItem from './components/NotesListItem';
 class Main extends Component {
     constructor() {
         super();
