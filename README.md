@@ -2,8 +2,6 @@
 
 ## Instructions
 
-## Getting Started
-
 Get the code
 
     git clone https://github.com/kureci/react-demo.git
