@@ -1,12 +1,12 @@
 {
-  "name": "TechTest",
+  "name": "react-frontend-demo",
   "version": "1.0.0",
-  "description": "Ageas frontend Tech test",
+  "description": "React Front-end Demo",
   "main": "server/index.js",
   "repository": "",
   "scripts": {
     "start": "node server/index.js",
-    "build": "webpack --config ./webpack.config.js"
+    "build": "webpack --config ./webpack.config.js --mode production"
   },
   "author": "Ageas",
   "license": "ISC",
