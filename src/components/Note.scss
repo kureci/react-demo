@@ -1,4 +1,5 @@
 .note-page {
+    height: 100%;
     a {
         text-decoration: none;
         color: black;
@@ -6,6 +7,17 @@
         &.back {
             display: block;
             margin: 0 0 10px 2px;
+            line-height: 20px;
+            height: 3%;
+        }
+        .back-icon {
+            display: inline-block;
+            height: 18px;
+            width: 20px;
+            background: url("/public/assets/img/back_icon.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            vertical-align: text-bottom;
         }
     }
 }
@@ -15,6 +27,18 @@
     border-radius: 3px;
     box-shadow: 1px 1px 3px lightgrey;
     padding: 20px;
+    box-sizing: border-box;
+    height: 96%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .take-up-height {
+            flex: 1;
+        }
+    }
 }
 
 input[type=text], textarea {
@@ -25,12 +49,17 @@ input[type=text], textarea {
     border: none;
     border-radius: 2px;
     width: 100%;
-    margin-bottom: 12px;
     box-sizing: border-box;
+
+    &:not(:last-child) {
+        margin-bottom: 12px;
+    }
 }
 
 textarea {
     resize: none;
+    height: 100%;
+    display: block;
 }
 
 input.title {

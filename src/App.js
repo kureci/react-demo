@@ -10,7 +10,7 @@ class App extends Component {
                 <div className="container">
                     <Route exact path="/" component={Home} />
                     <Route path="/notes/:id" render={(props) => 
-                        <Note id={props.match.params.id} {...props}/> 
+                        <Note id={props.match.params.id} isNew={props.match.params.id === 'add'} {...props}/> 
                     }/>
                 </div>
             </Router>

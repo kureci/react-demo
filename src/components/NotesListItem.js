@@ -29,7 +29,7 @@ class NotesListItem extends Component {
             <div className="list-item">
                 {actionsOverlay}
                 <div className="details">
-                    {this.props.title}
+                    <div className="title">{this.props.title}</div>
                     <div className="body">{this.props.body}</div>
                     <div className="operations">
                         <span className="edit">

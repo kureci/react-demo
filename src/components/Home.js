@@ -53,9 +53,16 @@ class Home extends Component {
     }
 
     render() {
+        const content = this.state.notes.length ? 
+            this.notesList() : 
+            <div className="center">
+                <h3>You have no notes</h3>
+                <p>Start typing your dreams..</p>
+            </div>;
+
         return (
             <div>
-                {this.notesList()}
+                {content}
                 <FloatingButton content="+" linkTo="/notes/add" />
             </div>
         )
