@@ -1,9 +1,12 @@
+$colour-secondary-light: #e3e3e3;
+$colour-danger: #cc3737;
+
 .list-item {
     position: relative;
     background-color: white;
-    border: 1px solid lightgrey;
+    border: 1px solid $colour-secondary-light;
     margin-bottom: 10px;
-    box-shadow: 1px 1px 4px lightgrey;
+    box-shadow: 1px 1px 4px $colour-secondary-light;
     border-radius: 3px;
     min-height: 60px;
 
@@ -19,6 +22,15 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        .title {
+            a, a:hover, a:visited, a:active {
+                text-decoration: none;
+                color: black;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
         .body {
             color: #bebebe;
         }
@@ -27,7 +39,7 @@
             position: absolute;
             right: 0;
             top: 0;
-            border-left: 1px solid lightgrey;
+            border-left: 1px solid $colour-secondary-light;
             height: 100%;
 
             a, a:visited, a:hover, a:active {
@@ -40,13 +52,14 @@
                 padding: 5px 15px;
                 box-sizing: border-box;
                 height: 50%;
+                line-height: 24px;
 
                 &.edit {
                     border-top-right-radius: 3px;
                 }
 
                 &.delete {
-                    background-color: #cc3737;
+                    background-color: $colour-danger;
                     color: white;
                     border-bottom-right-radius: 3px;
                 }
@@ -68,13 +81,21 @@
         z-index: 999;
         
         span {
-            font-weight: 600;
             &:hover {
                 text-decoration: underline;
             }
             &.action {
                 display: inline-block;
                 margin-right: 10px;
+                padding: 5px 12px;
+                height: 20px;
+                background-color: white;
+                border-radius: 3px;
+                line-height: 20px;
+                &.delete {
+                    background-color: $colour-danger;
+                    color: white;
+                }
             }
         }
         &:not(.hidden) + .details {

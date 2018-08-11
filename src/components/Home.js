@@ -63,7 +63,7 @@ class Home extends Component {
         return (
             <div>
                 {content}
-                <FloatingButton content="+" linkTo="/notes/add" />
+                <FloatingButton content="+" linkTo="/notes/new" />
             </div>
         )
     }

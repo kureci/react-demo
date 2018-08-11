@@ -8,7 +8,7 @@
             display: block;
             margin: 0 0 10px 2px;
             line-height: 20px;
-            height: 3%;
+            height: 20px;
         }
         .back-icon {
             display: inline-block;
@@ -26,9 +26,8 @@
     background: white;
     border-radius: 3px;
     box-shadow: 1px 1px 3px lightgrey;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-    height: 96%;
 
     form {
         display: flex;
@@ -58,7 +57,6 @@ input[type=text], textarea {
 
 textarea {
     resize: none;
-    height: 100%;
     display: block;
 }
 

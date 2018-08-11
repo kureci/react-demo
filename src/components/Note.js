@@ -14,7 +14,8 @@ class Note extends Component {
             updatedAt: null,
             hasError: false,
             message: null,
-            redirectToHome: null
+            notFound: false,
+            redirectToHome: false,
         };
 
         this.titleChangeHandler = this.titleChangeHandler.bind(this);
@@ -25,7 +26,13 @@ class Note extends Component {
     componentDidMount() {
         if (!this.props.isNew) {
             fetch(`/api/notes/${this.props.id}`)
-                .then(res => res.json())
+                .then(res => {
+                    if (res.status === 404) {
+                        this.setState({notFound: true});
+                        return;
+                    }
+                    return res.json()
+                })
                 .then(result => {
                     this.setState(result)
                 });
@@ -71,7 +78,17 @@ class Note extends Component {
             },
             body: JSON.stringify(this.state)
         })
-        .then(res => res.json());
+        .then(res => {
+            if (res.status === 200) {
+                this.updateMessage('Saved');
+            }
+            return res.json()
+        })
+        .then(result => {
+            if (result.err) {
+                this.updateMessage(result.err, true)
+            }
+        });
     }
 
     titleChangeHandler(event) {
@@ -96,30 +113,31 @@ class Note extends Component {
     }
 
     render() {
-        const { redirectToHome } = this.state;
+        const { redirectToHome, notFound } = this.state;
         if (redirectToHome) return <Redirect to='/' push/>;
+        else if (notFound) return <Redirect to='/not-found' push/>;
         
-        const messageDiv = <div className={this.state.hasError ? 'error':''}>{this.state.message}</div>;
+        const messageDiv = <div className={'message ' + (this.state.hasError ? 'error':'success')}>{this.state.message}</div>;
         return (
-            <div className="note-page">
+            <div className="note-page full-height take-up-rest">
                 <Link to="/" className="back"><span className="back-icon"></span> Back to notes</Link>
-                <div className="note">
-                    <form onSubmit={this.submitHandler}>
+                <div className="note full-height take-up-rest">
+                    <form className="full-height take-up-rest" onSubmit={this.submitHandler}>
                         <div class="row">
                             <input type="text" name="title" placeholder="Note title" className="title no-outline" autoFocus="true" autoComplete="off"
                                 value={this.state.title}
                                 onChange={this.titleChangeHandler}
                             />
                         </div>
-                        <div class="row take-up-height">
-                            <textarea name="body" placeholder="Note body" className="no-outline"
+                        <div class="row full-height take-up-rest">
+                            <textarea name="body" placeholder="Note body" className="no-outline take-up-rest"
                                 value={this.state.body}
                                 onChange={this.bodyChangeHandler}
                             />
                         </div>
 
                         <div className="row">
-                        <div className="float-left">{messageDiv}</div>
+                        <div className="float-left bottom-align">{messageDiv}</div>
                             <div className="float-right">
                                 <input type="submit" value="Save" className="no-outline"/>
                             </div>

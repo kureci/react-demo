@@ -21,7 +21,7 @@ class NotesListItem extends Component {
 
     render() {
         const actionsOverlay = this.state.show_overlay ? <div className="overlay">
-            <span className="action" onClick={this.props.deleteHandler}>Delete</span>
+            <span className="action delete" onClick={this.props.deleteHandler}>Delete</span>
             <span className="action" onClick={() => this.toggleOverlay(false)}>Cancel</span>
         </div> : '';
 
@@ -29,7 +29,9 @@ class NotesListItem extends Component {
             <div className="list-item">
                 {actionsOverlay}
                 <div className="details">
-                    <div className="title">{this.props.title}</div>
+                    <div className="title">
+                        <Link to={this.props.linkTo} >{this.props.title}</Link>
+                    </div>
                     <div className="body">{this.props.body}</div>
                     <div className="operations">
                         <span className="edit">

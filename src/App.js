@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import Home from './components/Home';
 import Note from './components/Note';
+
+const NotFound = () => {
+    return (
+        <div className="center">
+            <h4>Page not found</h4>
+            <p>You sure you've got the correct URL?</p>
+            <Link to="/">Go home</Link>
+        </div>
+    );
+}
 
 class App extends Component {
     render() {
         return (
-            <Router>
-                <div className="container">
-                    <Route exact path="/" component={Home} />
-                    <Route path="/notes/:id" render={(props) => 
-                        <Note id={props.match.params.id} isNew={props.match.params.id === 'add'} {...props}/> 
-                    }/>
-                </div>
-            </Router>
+            <div className="container full-height">
+                <Router>
+                    <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/notes/:id(new|[0-9]+)" render={(props) => 
+                                <Note id={props.match.params.id} isNew={props.match.params.id === 'new'} {...props}/> 
+                            }/>
+                            <Route component={NotFound}/>
+                    </Switch>
+                </Router>
+            </div>
         );
     }
 }
